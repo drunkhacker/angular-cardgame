@@ -1,0 +1,13 @@
+.user-card.well.well-lg
+  img.user-photo.img-circle(src="{{photoUrl}}")
+  h3(ng-show="authorized") {{user}}
+  h5(ng-hide="authorized") Greetings, newcomer
+
+  button.btn.btn-primary.btn-lg(type="button", ng-click="newGame()", ng-show="authorized") New Game
+
+  form(ng-submit="login()", ng-hide="authorized")
+    .input-group
+      .input-group-addon @
+      input.form-control(type="email", ng-model="email", placeholder="Enter email")
+    button.btn.btn-primary.btn-default(type="submit", style="margin-top:10px;") Log in
+

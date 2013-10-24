@@ -1,0 +1,6 @@
+ul#cards.baraja-container
+  li.card(ng-repeat="card in cards")
+    img(src="{{card.path}}", ng-click="cardClick(card, $event)", ng-init="$last && start()")
+//timer label
+div.timer
+  {{min | numberFixedLen : 2}}:{{sec | numberFixedLen : 2}}.{{subsec}}

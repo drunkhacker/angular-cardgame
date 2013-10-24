@@ -1,0 +1,33 @@
+!!!5
+html(ng-app="cardgame")
+  head
+    meta(charset="utf-8")
+    title Card Game
+
+    link(rel="stylesheet", href="bower_components/bootstrap/dist/css/bootstrap.css")
+    link(rel="stylesheet", href="styles/main.css")
+    link(rel="stylesheet", href="styles/game.css")
+
+  body
+    .container
+      // static navigation bar
+      nav.navbar.navbar-inverse(role="navigation", ng-controller="NavCtrl")
+        .navbar-header
+          a.navbar-brand(href="#") Card
+        ul.nav.navbar-nav
+          li(ng-class="{active: isCurrentPath('/game') }")
+            a(href="#/game") New Game
+          li(ng-class="{active: isCurrentPath('/rank') }")
+            a(href="#/rank") Rank
+        .nav.navbar-nav.navbar-right
+          p ex@mple.com
+      #content(ng-view="")
+
+    script(src="scripts/modernizr.custom.97293.js")
+    script(src="bower_components/jquery/jquery.js")
+    script(src="scripts/jquery.baraja.js")
+    script(src="bower_components/angular/angular.js")
+    script(src="scripts/services/md5.js")
+    script(src="scripts/services.js")
+    script(src="scripts/app.js")
+    script(src="scripts/controllers.js")

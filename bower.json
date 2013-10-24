@@ -1,0 +1,14 @@
+{
+  "name": "simple-cardgame",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.0.8",
+    "angular-resource":"~1.0.8",
+    "angular-cookies":"~1.0.8",
+    "angular-sanitize":"~1.0.8",
+    "jquery": "~2.0.3",
+    "bootstrap": "~3.0.0"
+  }
+}
+
+

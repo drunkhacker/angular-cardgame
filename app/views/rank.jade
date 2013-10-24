@@ -1,0 +1,7 @@
+ul.list-group
+  li.list-group-item.media(ng-repeat="rank in ranks | orderBy:'min_time'")
+    img.media-object.pull-left.img-circle(src="http://gravatar.com/avatar/{{rank.email | gravatar}}?s=100")
+    .media-body
+      h3.media-heading {{rank.email}}
+      h4 {{rank.min_time}} sec.
+      h5.text-muted {{rank.total_games}} games
