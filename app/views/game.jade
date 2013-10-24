@@ -1,6 +1,9 @@
 ul#cards.baraja-container
   li.card(ng-repeat="card in cards")
-    img(src="{{card.path}}", ng-click="cardClick(card, $event)", ng-init="$last && start()")
+    img(src="{{card.path}}", ng-click="cardClick(card, $event)", ng-init="$last && start()") // 지금 렌더링 하는 객체가 배열에서 맨 마지막 객체이면
+                                                                                             // start 함수를 불러줌
 //timer label
 div.timer
+  // 분과 초를 두자리로 보여주기 위한 filter 적용
+  // app.coffee의 filter 부분 참조
   {{min | numberFixedLen : 2}}:{{sec | numberFixedLen : 2}}.{{subsec}}

@@ -11,6 +11,7 @@ html(ng-app="cardgame")
   body
     .container
       // static navigation bar
+      // This is controlled by NavCtrl
       nav.navbar.navbar-inverse(role="navigation", ng-controller="NavCtrl")
         .navbar-header
           a.navbar-brand(href="#") Card
@@ -21,13 +22,24 @@ html(ng-app="cardgame")
             a(href="#/rank") Rank
         .nav.navbar-nav.navbar-right
           p ex@mple.com
+
+      // actual content. This is manipulated when 
+      // route changed as defined in app.coffee
       #content(ng-view="")
 
     script(src="scripts/modernizr.custom.97293.js")
     script(src="bower_components/jquery/jquery.js")
     script(src="scripts/jquery.baraja.js")
+
+    // script include 순서에 관해
+    // 디펜던시 때문에 javascript include 순서가 유의미함.
+    // 1. AngularJS
+    // 2. md5.js
+    // 3. services.js
+    // 4. app.js는 (2), (3)에 의존
+    // 5. controllers.js 는 (4)에 의존
     script(src="bower_components/angular/angular.js")
     script(src="scripts/services/md5.js")
     script(src="scripts/services.js")
     script(src="scripts/app.js")
-    script(src="scripts/controllers.js")
+    script(src="scripts/controllers.js") 
